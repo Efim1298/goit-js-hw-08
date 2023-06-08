@@ -12,8 +12,9 @@ player.on(
   }, 1000)
 );
 
-player
-  .setCurrentTime(localStorage.getItem(VIDEOPLAYER_CURRENT_TIME))
-  .catch(function (error) {
+const currentTime = localStorage.getItem(VIDEOPLAYER_CURRENT_TIME);
+if (currentTime) {
+  player.setCurrentTime(currentTime).catch(function (error) {
     console.error(error);
   });
+}

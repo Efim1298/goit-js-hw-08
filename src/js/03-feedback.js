@@ -38,13 +38,14 @@ function onFormInput(e) {
 function populateForm() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if (savedData.email) {
-    inputEl.value = savedData.email;
-    formData.email = savedData.email;
-  }
-
-  if (savedData.message) {
-    textareaEl.value = savedData.message;
-    formData.message = savedData.message;
+  if (savedData) {
+    if (savedData.email) {
+      inputEl.value = savedData.email;
+      formData.email = savedData.email;
+    }
+    if (savedData.message) {
+      textareaEl.value = savedData.message;
+      formData.message = savedData.message;
+    }
   }
 }
